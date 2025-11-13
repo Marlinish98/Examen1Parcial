@@ -15,5 +15,4 @@ public class Alumno
         Console.WriteLine("************************");
         Console.WriteLine("");
     }
-
 }
