@@ -1,0 +1,51 @@
+public class Matricula : ICalculoNota
+{
+    public Alumno Alumno { get; set; }
+    public Asignatura Asignatura { get; set; }
+    public List<double> NotasParciales { get; set; } = new List<double>();
+
+    public Matricula(){}
+
+    public void CalcularNotaFinal(double n1, double n2, double n3)
+    {
+        double suma = n1 + n2 + n3;
+        return suma;
+    }
+     public void ValidarNotas(double n1, double n2, double n3)
+    {
+        if (n1 > 30)
+        {
+            throw new ArgumentException("ERROR: La nota 1 no puede pasar de 30");
+        }
+        if (n2 > 30)
+        {
+            throw new ArgumentException("ERROR: La nota 1 no puede pasar de 30");
+        }
+        
+        if (n3 > 40)
+        {
+            throw new ArgumentException("ERROR: la nota 3 no puede pasar de 40");
+        }
+    }
+    public string ObtenerMensajeNota(double notaFinal)
+    {
+        if (notaFinal => 0 && notaFinal <= 59)
+        {
+            Console.WriteLine("Reprobado");
+        }
+        else if (notaFinal <= 79)
+        {
+            Console.WriteLine("Bueno");
+        }
+        else if (notaFinal <= 89)
+        {
+            Console.WriteLine("Muy Bueno");
+        }
+        else if(notaFinal <=100)
+        {
+            Console.WriteLine("Sobresaliente"); 
+        }
+    }
+    
+   
+}
